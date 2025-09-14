@@ -2,16 +2,13 @@
   "name": "ai-lca-tool",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npx vite build",
+    "build": "node node_modules/vite/bin/vite.js build",
     "preview": "vite preview",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
-    "vite": "^4.5.0",
-    "@vitejs/plugin-react": "^4.1.1",
     "framer-motion": "^12.23.12",
     "papaparse": "^5.5.3",
     "react": "^18.2.0",
@@ -22,6 +19,8 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "vite": "^4.5.0",
+    "@vitejs/plugin-react": "^4.1.1",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "autoprefixer": "^10.4.16",
