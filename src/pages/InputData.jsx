@@ -227,13 +227,13 @@ const InputData = () => {
           >
             Save Scenario
           </button>
-          <button>
+          <button
            <Link
                   to="/predictions"
                   className="btn-primary text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 >
                   Predict
-                </Link>
+                </Link>>
             </button>
         </div>
       </div>
