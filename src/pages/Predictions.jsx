@@ -120,6 +120,15 @@ const Predictions = () => {
           Recycled share: {recycled}% • Raw: {raw}% • Energy: {stored?.energySource ?? 'Grid mix'} • Distance: {stored?.transportDistanceKm ?? '—'} km
         </p>
       </motion.div>
+      {/* ✅ Dashboard Button */}
+          <div className="mt-8 flex justify-center">
+            <Link
+              to="/dashboard"
+              className="btn-primary text-lg px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            >
+              Visualize
+            </Link>
+          </div>
     </div>
   )
 }
