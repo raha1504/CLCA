@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // ✅ Import Link
 
 const InputData = () => {
   // State for inputs
@@ -31,11 +32,26 @@ const InputData = () => {
         aiAssist,
       })
     );
-  }, [material, quantity, unit, productionRoute, recycledPercent, energySource, transport, wasteStreams, endOfLife, aiAssist]);
+  }, [
+    material,
+    quantity,
+    unit,
+    productionRoute,
+    recycledPercent,
+    energySource,
+    transport,
+    wasteStreams,
+    endOfLife,
+    aiAssist,
+  ]);
 
   // Handlers
   const handleCheckboxChange = (setter, prevValues, value, checked) => {
-    setter(checked ? [...prevValues, value] : prevValues.filter((v) => v !== value));
+    setter(
+      checked
+        ? [...prevValues, value]
+        : prevValues.filter((v) => v !== value)
+    );
   };
 
   return (
@@ -141,13 +157,17 @@ const InputData = () => {
             <input
               type="number"
               value={transport.distance}
-              onChange={(e) => setTransport({ ...transport, distance: Number(e.target.value) })}
+              onChange={(e) =>
+                setTransport({ ...transport, distance: Number(e.target.value) })
+              }
               className="border rounded-lg p-3 w-1/2 focus:ring focus:ring-green-200"
               placeholder="Distance (km)"
             />
             <select
               value={transport.mode}
-              onChange={(e) => setTransport({ ...transport, mode: e.target.value })}
+              onChange={(e) =>
+                setTransport({ ...transport, mode: e.target.value })
+              }
               className="border rounded-lg p-3 w-1/2 focus:ring focus:ring-green-200"
             >
               <option>Truck</option>
@@ -227,15 +247,16 @@ const InputData = () => {
           >
             Save Scenario
           </button>
-          {/* ✅ Predict Button at Bottom */}
-      <div className="mt-8 flex justify-center">
-        <Link
-          to="/predictions"
-          className="btn-primary text-lg px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-        >
-          Predict
-        </Link>
-      </div>
+
+          {/* ✅ Predict Button */}
+          <div className="mt-8 flex justify-center">
+            <Link
+              to="/predictions"
+              className="btn-primary text-lg px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            >
+              Predict
+            </Link>
+          </div>
         </div>
       </div>
     </div>
